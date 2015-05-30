@@ -13,15 +13,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int[] BUTTON_ID_RES = {
-            R.id.btn_spotify_streamer,
-            R.id.btn_scores,
-            R.id.btn_library,
-            R.id.btn_build_it_bigger,
-            R.id.btn_xyz_reader,
-            R.id.btn_capstone
-    };
-
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
