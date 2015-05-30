@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Toast mAppToast;
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -27,11 +29,19 @@ public class MainActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     String description = button.getContentDescription().toString();
-                    Toast.makeText(MainActivity.this,
-                            getString(R.string.btn_click_toast, description), Toast.LENGTH_SHORT).show();
+                    showAppToast(getString(R.string.btn_click_toast, description));
                 }
             });
         }
+    }
+
+    private void showAppToast(String msg) {
+        if (mAppToast != null) {
+            mAppToast.cancel();
+        }
+
+        mAppToast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
+        mAppToast.show();
     }
 
     @Override public boolean onCreateOptionsMenu(Menu menu) {
